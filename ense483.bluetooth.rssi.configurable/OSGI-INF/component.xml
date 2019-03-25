@@ -5,5 +5,5 @@
       <provide interface="org.eclipse.kura.configuration.ConfigurableComponent"/>
    </service>
    <property name="service.pid" type="String" value="ense483.bluetooth.rssi.configurable.Spoofer"/>
-   <reference bind="setCloudPublisher" cardinality="1..1" interface="org.eclipse.kura.cloudconnection.publisher.CloudPublisher" name="CloudPublisher" policy="static"/>
+   <reference bind="setCloudPublisher" cardinality="1..1" interface="org.eclipse.kura.cloudconnection.publisher.CloudPublisher" name="CloudPublisher" policy="static" unbind="unsetCloudPublisher"/>
 </scr:component>

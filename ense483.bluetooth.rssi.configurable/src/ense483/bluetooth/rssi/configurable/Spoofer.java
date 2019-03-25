@@ -27,6 +27,10 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
     private Map<String, Object> properties;
     
     private static final String PUBLISH_RATE_PROP_NAME = "publish.rate";
+    
+    private static final String RSSI_DATA_PROP_NAME = "rssi.node";
+    
+    private static final int NUMBER_OF_NODES = 8;
 
     private final ScheduledExecutorService worker;
     private ScheduledFuture<?> handle;
@@ -137,6 +141,7 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
      */
     private void doUpdate(boolean onUpdate) {
         // cancel a current worker handle if one if active
+    	/*
         if (this.handle != null) {
             this.handle.cancel(true);
         }
@@ -151,6 +156,8 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
                 doPublish();
             }
         }, 0, pubrate, TimeUnit.SECONDS);
+        */
+        doPublish();
     }
 
     /**
@@ -167,13 +174,31 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
 
         // Timestamp the message
         payload.setTimestamp(new Date());
-
+        /*
+        for (int i = 0 ; i < NUMBER_OF_NODES; i++) {
+        	
+        	String prop_name = RSSI_DATA_PROP_NAME + Integer.toString(i);
+        	logger.info("getting " + prop_name);
+        	
+        	int rssi_value = (Integer) this.properties.get(prop_name);
+        	payload.addMetric("RSSI" + Integer.toString(i), rssi_value);
+        }
+       */ 
+        payload.addMetric("RSSI1", (Integer) this.properties.get("rssi.node1"));
+        payload.addMetric("RSSI2", (Integer) this.properties.get("rssi.node2"));
+        payload.addMetric("RSSI3", (Integer) this.properties.get("rssi.node3"));
+        payload.addMetric("RSSI4", (Integer) this.properties.get("rssi.node4"));
+        payload.addMetric("RSSI5", (Integer) this.properties.get("rssi.node5"));
+        payload.addMetric("RSSI6", (Integer) this.properties.get("rssi.node6"));
+        payload.addMetric("RSSI7", (Integer) this.properties.get("rssi.node7"));
+        
+        
         // Add the temperature as a metric to the payload
+        /*
         payload.addMetric("RSSI1", 3.0F);
         payload.addMetric("RSSI2", 5.0F);
         payload.addMetric("RSSI3", 30.0F);
 
-        /*
         int code = this.random.nextInt();
         if (this.random.nextInt() % 5 == 0) {
             payload.addMetric("errorCode", code);
