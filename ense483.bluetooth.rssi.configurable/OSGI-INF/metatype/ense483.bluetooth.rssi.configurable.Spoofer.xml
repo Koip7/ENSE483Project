@@ -2,7 +2,7 @@
 <MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="en_us">
     <OCD id="ense483.bluetooth.rssi.configurable.Spoofer"
         name="Spoofer"
-        description="This a configuration page for spoofing RSSI values of nodes 1-7 to node 0">
+        description="This a configuration page for spoofing RSSI values of between nodes 0-4. It can be assumed that node 0 is this kura instance">
 
         <AD id="CloudPublisher.target"
             name="CloudPublisher Target Filter"
@@ -21,18 +21,18 @@
             default="2"
             min="1" 
             description="Default message publishing rate in seconds (min 1)."/>
-  
-        <AD id="rssi.node1"
-            name="RSSI node1"
+ <!-- In Relation to node 0 -->
+        <AD id="rssi.node01"
+            name="RSSI node0 to node1"
             type="Integer"
             cardinality="0"
             required="true"
             default="0"
             min="0"
-            description="RSSI value reported of node0 to node1"/>
+            description="RSSI value reported of node 0 to node1"/>
 
-        <AD id="rssi.node2"
-            name="RSSI node2"
+        <AD id="rssi.node02"
+            name="RSSI node0 to node 2"
             type="Integer"
             cardinality="0"
             required="true"
@@ -40,8 +40,8 @@
             min="0"
             description="RSSI value reported of node0 to node2"/>  
                      
-        <AD id="rssi.node3"
-            name="RSSI node3"
+        <AD id="rssi.node03"
+            name="RSSI  node0 to node3"
             type="Integer"
             cardinality="0"
             required="true"
@@ -49,41 +49,35 @@
             min="0"
             description="RSSI value reported of node0 to node3"/>  
 
-        <AD id="rssi.node4"
-            name="RSSI node4"
+<!-- In Relation to node 1 -->
+        <AD id="rssi.node12"
+            name="RSSI node1 to node 2"
             type="Integer"
             cardinality="0"
             required="true"
             default="0"
             min="0"
-            description="RSSI value reported of node0 to node4"/>
+            description="RSSI value reported of node1 to node2"/>  
+                     
+        <AD id="rssi.node13"
+            name="RSSI node1 to node 3"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node1 to node3"/>  
 
-        <AD id="rssi.node5"
-            name="RSSI node5"
+<!-- In Relation to node 2 -->
+        <AD id="rssi.node23"
+            name="RSSI node2 to node3"
             type="Integer"
             cardinality="0"
             required="true"
             default="0"
             min="0"
-            description="RSSI value reported of node0 to node5"/>
+            description="RSSI value reported of node2 to node3"/>  
 
-        <AD id="rssi.node6"
-            name="RSSI node6"
-            type="Integer"
-            cardinality="0"
-            required="true"
-            default="0"
-            min="0"
-            description="RSSI value reported of node0 to node6"/>  
-            
-        <AD id="rssi.node7"
-            name="RSSI node7"
-            type="Integer"
-            cardinality="0"
-            required="true"
-            default="0"
-            min="0"
-            description="RSSI value reported of node0 to node7"/>  
                   
     </OCD>
 
