@@ -4,6 +4,24 @@
         name="Spoofer"
         description="This is a sample metatype file for a simple configurable component">
 
+        <AD id="CloudPublisher.target"
+            name="CloudPublisher Target Filter"
+            type="String"
+            cardinality="0"
+            required="true"
+            default="(kura.service.pid=changeme)"
+            description="Specifies, as an OSGi target filter, the pid of the Cloud Publisher used to publish messages to the cloud platform.">
+        </AD>
+        
+		<AD id="publish.rate"  
+            name="publish.rate"
+            type="Integer"
+            cardinality="0" 
+            required="true"
+            default="2"
+            min="1" 
+            description="Default message publishing rate in seconds (min 1)."/>
+
         <AD id="param1.string"
             name="param1.string"
             type="String"
@@ -30,6 +48,7 @@
             default="2"
             min="1"
             description="Integer configuration parameter"/>
+            
     </OCD>
 
     <Designate pid="ense483.bluetooth.rssi.configurable.Spoofer">
