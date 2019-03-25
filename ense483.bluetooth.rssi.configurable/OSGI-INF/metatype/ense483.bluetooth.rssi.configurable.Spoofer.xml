@@ -47,7 +47,25 @@
             required="true"
             default="0"
             min="0"
-            description="RSSI value reported of node0 to node3"/>  
+            description="RSSI value reported of node0 to node3"/>
+            
+		<AD id="rssi.node04"
+            name="RSSI node0 to node4"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node 0 to node5"/>
+
+        <AD id="rssi.node05"
+            name="RSSI node0 to node 5"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node0 to node5"/>  
 
 <!-- In Relation to node 1 -->
         <AD id="rssi.node12"
@@ -66,7 +84,25 @@
             required="true"
             default="0"
             min="0"
-            description="RSSI value reported of node1 to node3"/>  
+            description="RSSI value reported of node1 to node3"/>
+            
+		<AD id="rssi.node14"
+            name="RSSI node1 to node 4"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node1 to node4"/>  
+                     
+        <AD id="rssi.node15"
+            name="RSSI node1 to node 5"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node1 to node5"/>  
 
 <!-- In Relation to node 2 -->
         <AD id="rssi.node23"
@@ -76,8 +112,53 @@
             required="true"
             default="0"
             min="0"
-            description="RSSI value reported of node2 to node3"/>  
+            description="RSSI value reported of node2 to node3"/> 
+            
+        <AD id="rssi.node24"
+            name="RSSI node2 to node4"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node2 to node4"/> 
+             
+        <AD id="rssi.node25"
+            name="RSSI node2 to node5"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node2 to node5"/>  
 
+<!-- In Relation to node 3 -->
+        <AD id="rssi.node34"
+            name="RSSI node3 to node4"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node3 to node4"/>  
+        <AD id="rssi.node35"
+            name="RSSI node3 to node5"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node3 to node5"/> 
+            
+<!-- In Relation to node 4 -->
+        <AD id="rssi.node45"
+            name="RSSI node4 to node5"
+            type="Integer"
+            cardinality="0"
+            required="true"
+            default="0"
+            min="0"
+            description="RSSI value reported of node4 to node5"/>  
                   
     </OCD>
 

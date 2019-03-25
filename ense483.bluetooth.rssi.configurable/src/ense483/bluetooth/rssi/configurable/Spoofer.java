@@ -184,12 +184,26 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
         	payload.addMetric("RSSI" + Integer.toString(i), rssi_value);
         }
        */ 
-        payload.addMetric("RSSI0to1", (Integer) this.properties.get("rssi.node01"));
-        payload.addMetric("RSSI0to2", (Integer) this.properties.get("rssi.node02"));
-        payload.addMetric("RSSI0to3", (Integer) this.properties.get("rssi.node03"));
-        payload.addMetric("RSSI1to2", (Integer) this.properties.get("rssi.node12"));
-        payload.addMetric("RSSI1to3", (Integer) this.properties.get("rssi.node13"));
-        payload.addMetric("RSSI2to3", (Integer) this.properties.get("rssi.node23"));
+        payload.addMetric("01", (Integer) this.properties.get("rssi.node01"));
+        payload.addMetric("02", (Integer) this.properties.get("rssi.node02"));
+        payload.addMetric("03", (Integer) this.properties.get("rssi.node03"));
+        payload.addMetric("04", (Integer) this.properties.get("rssi.node04"));
+        payload.addMetric("05", (Integer) this.properties.get("rssi.node05"));
+        
+        payload.addMetric("12", (Integer) this.properties.get("rssi.node12"));
+        payload.addMetric("13", (Integer) this.properties.get("rssi.node13"));
+        payload.addMetric("14", (Integer) this.properties.get("rssi.node14"));
+        payload.addMetric("15", (Integer) this.properties.get("rssi.node15"));
+        
+        payload.addMetric("23", (Integer) this.properties.get("rssi.node23"));
+        payload.addMetric("24", (Integer) this.properties.get("rssi.node24"));
+        payload.addMetric("25", (Integer) this.properties.get("rssi.node25"));
+        
+        payload.addMetric("34", (Integer) this.properties.get("rssi.node34"));
+        payload.addMetric("35", (Integer) this.properties.get("rssi.node35"));
+        
+        payload.addMetric("45", (Integer) this.properties.get("rssi.node45"));
+
         
         // Add the temperature as a metric to the payload
         /*
