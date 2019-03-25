@@ -1,3 +1,13 @@
+/*Justin Smith
+ * ENSE483
+ * Class Project
+ * 
+ * This file defines the Spoofer plugin
+ * This plugin retrieves configured spoof data stating RSSI values between different nodes
+ * It then uses the configured cloud service to send the data over the configured protocol
+ * Currently this is only tested with the MQTT protocol
+ */
+
 package ense483.bluetooth.rssi.configurable;
 
 import java.util.Date;
@@ -25,15 +35,10 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
     
     private static final String APP_ID = "ense483.bluetooth.rssi.configurable.Spoofer";
     private Map<String, Object> properties;
-    
-    private static final String PUBLISH_RATE_PROP_NAME = "publish.rate";
-    
-    private static final String RSSI_DATA_PROP_NAME = "rssi.node";
-    
-    private static final int NUMBER_OF_NODES = 8;
+
+    //private static final int NUMBER_OF_NODES = 8;
 
     private final ScheduledExecutorService worker;
-    private ScheduledFuture<?> handle;
     
     private CloudPublisher cloudPublisher;
     
@@ -53,12 +58,7 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
         this.cloudPublisher.unregisterCloudDeliveryListener(Spoofer.this);
         this.cloudPublisher = null;
     }
-/*
-    protected void activate(ComponentContext componentContext) {
-        s_logger.info("Bundle " + APP_ID + " has started!");
-    }
-*/
-    
+
     protected void activate(ComponentContext componentContext, Map<String, Object> properties) {
     	logger.info("Activating Spoofer...");
 
@@ -94,7 +94,6 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
             logger.info("Update - {}: {}", property.getKey(), property.getValue());
         }
 
-        // try to kick off a new job
         doUpdate(true);
         logger.info("Updated Spoofer... Done.");
     }
@@ -130,33 +129,11 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
 
     }
 
-    // ----------------------------------------------------------------
-    //
-    // Private Methods
-    //
-    // ----------------------------------------------------------------
-
     /**
      * Called after a new set of properties has been configured on the service
      */
     private void doUpdate(boolean onUpdate) {
-        // cancel a current worker handle if one if active
-    	/*
-        if (this.handle != null) {
-            this.handle.cancel(true);
-        }
-
-        // schedule a new worker based on the properties of the service
-        int pubrate = (Integer) this.properties.get(PUBLISH_RATE_PROP_NAME);
-        this.handle = this.worker.scheduleAtFixedRate(new Runnable() {
-
-            @Override
-            public void run() {
-                Thread.currentThread().setName(getClass().getSimpleName());
-                doPublish();
-            }
-        }, 0, pubrate, TimeUnit.SECONDS);
-        */
+    	//when the configuration of the plugin is changed send out data over cloud publisher
         doPublish();
     }
 
@@ -174,16 +151,9 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
 
         // Timestamp the message
         payload.setTimestamp(new Date());
-        /*
-        for (int i = 0 ; i < NUMBER_OF_NODES; i++) {
-        	
-        	String prop_name = RSSI_DATA_PROP_NAME + Integer.toString(i);
-        	logger.info("getting " + prop_name);
-        	
-        	int rssi_value = (Integer) this.properties.get(prop_name);
-        	payload.addMetric("RSSI" + Integer.toString(i), rssi_value);
-        }
-       */ 
+        
+       //TODO: Do this programically instead of hardcoded
+        //packing of the RSSI data as read from the configuration data
         payload.addMetric("01", (Integer) this.properties.get("rssi.node01"));
         payload.addMetric("02", (Integer) this.properties.get("rssi.node02"));
         payload.addMetric("03", (Integer) this.properties.get("rssi.node03"));
@@ -204,20 +174,6 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
         
         payload.addMetric("45", (Integer) this.properties.get("rssi.node45"));
 
-        
-        // Add the temperature as a metric to the payload
-        /*
-        payload.addMetric("RSSI1", 3.0F);
-        payload.addMetric("RSSI2", 5.0F);
-        payload.addMetric("RSSI3", 30.0F);
-
-        int code = this.random.nextInt();
-        if (this.random.nextInt() % 5 == 0) {
-            payload.addMetric("errorCode", code);
-        } else {
-            payload.addMetric("errorCode", 0);
-        }
-	*/
         KuraMessage message = new KuraMessage(payload);
 
         // Publish the message
