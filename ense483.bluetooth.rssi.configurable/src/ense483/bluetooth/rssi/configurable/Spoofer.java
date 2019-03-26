@@ -159,21 +159,28 @@ public class Spoofer implements ConfigurableComponent, CloudConnectionListener, 
         payload.addMetric("03", (Integer) this.properties.get("rssi.node03"));
         payload.addMetric("04", (Integer) this.properties.get("rssi.node04"));
         payload.addMetric("05", (Integer) this.properties.get("rssi.node05"));
+        payload.addMetric("06", (Integer) this.properties.get("rssi.node06"));
+        payload.addMetric("07", (Integer) this.properties.get("rssi.node07"));
+        payload.addMetric("08", (Integer) this.properties.get("rssi.node08"));
+        payload.addMetric("09", (Integer) this.properties.get("rssi.node09"));
         
         payload.addMetric("12", (Integer) this.properties.get("rssi.node12"));
         payload.addMetric("13", (Integer) this.properties.get("rssi.node13"));
         payload.addMetric("14", (Integer) this.properties.get("rssi.node14"));
         payload.addMetric("15", (Integer) this.properties.get("rssi.node15"));
+        payload.addMetric("16", (Integer) this.properties.get("rssi.node16"));
+        payload.addMetric("17", (Integer) this.properties.get("rssi.node17"));
+        payload.addMetric("18", (Integer) this.properties.get("rssi.node18"));
+        payload.addMetric("19", (Integer) this.properties.get("rssi.node19"));
         
         payload.addMetric("23", (Integer) this.properties.get("rssi.node23"));
         payload.addMetric("24", (Integer) this.properties.get("rssi.node24"));
         payload.addMetric("25", (Integer) this.properties.get("rssi.node25"));
+        payload.addMetric("26", (Integer) this.properties.get("rssi.node26"));
+        payload.addMetric("27", (Integer) this.properties.get("rssi.node27"));
+        payload.addMetric("28", (Integer) this.properties.get("rssi.node28"));
+        payload.addMetric("29", (Integer) this.properties.get("rssi.node29"));
         
-        payload.addMetric("34", (Integer) this.properties.get("rssi.node34"));
-        payload.addMetric("35", (Integer) this.properties.get("rssi.node35"));
-        
-        payload.addMetric("45", (Integer) this.properties.get("rssi.node45"));
-
         KuraMessage message = new KuraMessage(payload);
 
         // Publish the message
