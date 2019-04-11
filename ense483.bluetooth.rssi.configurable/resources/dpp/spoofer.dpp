@@ -1,15 +1,15 @@
 #Deployment Plugin Project File
-#Sun Mar 24 17:00:27 CST 2019
+#Tue Mar 26 16:01:18 CST 2019
 build.ant.name=<.>/resources/dpp/spoofer_build.xml
 build.dp.file=<.>/resources/dpp/spoofer.dp
 build.location=
-bundles.0.bundle_path=/media/jsmithers/ExtraSpace/iot-kura-develop/ENSE483/plugin/plugins/ense483.bluetooth.rssi.configurable_1.0.0.201903241658.jar
+bundles.0.bundle_path=/home/jsmithers/eclipse/ENSE483/plugins/ense483.bluetooth.rssi.configurable_1.0.0.201903261600.jar
 bundles.0.customizer=false
 bundles.0.headers.count=0
 bundles.0.missing=false
-bundles.0.name=bundles/ense483.bluetooth.rssi.configurable_1.0.0.201903241658.jar
+bundles.0.name=bundles/ense483.bluetooth.rssi.configurable_1.0.0.201903261600.jar
 bundles.0.symbolic_name=ense483.bluetooth.rssi.configurable
-bundles.0.version=1.0.0.201903241658
+bundles.0.version=1.0.0.201903261600
 bundles.count=1
 certificates.count=0
 general.signbundles=false

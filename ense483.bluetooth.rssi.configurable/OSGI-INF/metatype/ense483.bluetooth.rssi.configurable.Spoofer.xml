@@ -12,232 +12,236 @@
             default="(kura.service.pid=changeme)"
             description="Specifies, as an OSGi target filter, the pid of the Cloud Publisher used to publish messages to the cloud platform.">
         </AD>
-        
-		<AD id="publish.rate"  
-            name="publish.rate"
-            type="Integer"
+  
+       <AD id="simulation"  
+            name="Node Simulation"
+            type="String"
             cardinality="0" 
             required="true"
-            default="2"
-            min="1" 
-            description="Default message publishing rate in seconds (min 1)."/>
+            default="Custom" 
+            description="Different bluetooth node placements. Different configurations will be sent over MQTT depending on the configuration chosen">        
+           <Option label="Surrounded" value="Surrounded"/>
+           <Option label="Cross" value="Cross"/>
+           <Option label="Box" value="Box"/>
+           <Option label="Custom" value="Custom"/>
+		</AD>
  <!-- In Relation to node 0 -->
         <AD id="rssi.node01"
             name="RSSI node0 to node1"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node 0 to node1"/>
-
+            
         <AD id="rssi.node02"
             name="RSSI node0 to node 2"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node0 to node2"/>  
                      
         <AD id="rssi.node03"
             name="RSSI  node0 to node3"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node0 to node3"/>
             
 		<AD id="rssi.node04"
             name="RSSI node0 to node4"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node 0 to node5"/>
 
         <AD id="rssi.node05"
             name="RSSI node0 to node 5"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node0 to node5"/>
 
         <AD id="rssi.node06"
             name="RSSI node0 to node 6"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node0 to node6"/>          
 
         <AD id="rssi.node07"
             name="RSSI node0 to node 7"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node0 to node7"/>
             
 		<AD id="rssi.node08"
             name="RSSI node0 to node 8"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node0 to node8"/>
             
 		<AD id="rssi.node09"
             name="RSSI node0 to node 9"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node0 to node9"/>
 
 <!-- In Relation to node 1 -->
         <AD id="rssi.node12"
             name="RSSI node1 to node 2"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node1 to node2"/>  
                      
         <AD id="rssi.node13"
             name="RSSI node1 to node 3"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node1 to node3"/>
             
 		<AD id="rssi.node14"
             name="RSSI node1 to node 4"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node1 to node4"/>  
                      
         <AD id="rssi.node15"
             name="RSSI node1 to node 5"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node1 to node5"/>  
             
         <AD id="rssi.node16"
             name="RSSI node1 to node 6"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node1 to node6"/>          
 
         <AD id="rssi.node17"
             name="RSSI node1 to node 7"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node1 to node7"/>
             
 		<AD id="rssi.node18"
             name="RSSI node1 to node 8"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node1 to node8"/>
             
 		<AD id="rssi.node19"
             name="RSSI node1 to node 9"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node1 to node9"/>
 
 <!-- In Relation to node 2 -->
         <AD id="rssi.node23"
             name="RSSI node2 to node3"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node2 to node3"/> 
             
         <AD id="rssi.node24"
             name="RSSI node2 to node4"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node2 to node4"/> 
              
         <AD id="rssi.node25"
             name="RSSI node2 to node5"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node2 to node5"/>  
             
         <AD id="rssi.node26"
             name="RSSI node2 to node 6"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node2 to node6"/>          
 
         <AD id="rssi.node27"
             name="RSSI node2 to node 7"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node2 to node7"/>
             
 		<AD id="rssi.node28"
             name="RSSI node2 to node 8"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node2 to node8"/>
             
 		<AD id="rssi.node29"
             name="RSSI node2 to node 9"
-            type="Integer"
+            type="Float"
             cardinality="0"
             required="true"
             default="0"
-            min="0"
+            min="-1000"
             description="RSSI value reported of node2 to node9"/>
 
                   
